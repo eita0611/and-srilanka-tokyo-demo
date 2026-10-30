@@ -6,31 +6,31 @@ import { Photo } from "./Photo";
 
 export function Hero() {
   const height = site.isDemo
-    ? "min-h-[max(33rem,calc(100svh-1.75rem-3.75rem))] md:min-h-[max(38rem,calc(100svh-1.75rem))]"
-    : "min-h-[max(33rem,calc(100svh-3.75rem))] md:min-h-[max(38rem,100svh)]";
+    ? "min-h-[max(33rem,calc(100svh-1.75rem-3.75rem))] lg:min-h-[max(38rem,calc(100svh-1.75rem))]"
+    : "min-h-[max(33rem,calc(100svh-3.75rem))] lg:min-h-[max(38rem,100svh)]";
 
   return (
     <section aria-label="ファーストビュー" className={`on-dark relative isolate flex overflow-hidden bg-ink text-cream ${height}`}>
       <div className="hero-drift absolute inset-0 -z-20">
         <Photo
           photo={photos.hero}
-          sizes="(max-aspect-ratio: 3/2) 150vh, 100vw"
+          sizes="(max-aspect-ratio: 3/4) 90vh, 100vw"
           priority
           showTag={false}
-          position="50% 48%"
           className="hero-photo size-full"
+          imageClassName="object-[58%_50%] max-md:origin-top max-md:scale-[1.2] md:object-[50%_60%]"
         />
       </div>
-      {/* 写真の色を残したまま、文字が読める濃さまで落とす */}
+      {/* 料理の色を濁らせないよう、文字が載る左と下だけを落とす */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-ink/35 bg-[linear-gradient(to_left,rgb(41_32_25/0.5),transparent_46%),linear-gradient(to_top,rgb(41_32_25/0.62),transparent_42%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(41_32_25/0.92),rgb(41_32_25/0.58)_27%,transparent_44%)] md:bg-[linear-gradient(to_top,rgb(41_32_25/0.6),transparent_34%),linear-gradient(to_right,rgb(41_32_25/0.5),transparent_42%)]"
       />
 
-      <div className="shell relative flex flex-1 flex-col pb-5 pt-[5.25rem] md:pb-6 lg:pb-10 lg:pt-32">
-        <h1 className="mr-1 flex flex-row-reverse justify-start gap-[0.4em] self-end text-[clamp(1.875rem,min(10.5vw,5.5svh),3.25rem)] leading-[1.25] tracking-[0.12em] md:text-[clamp(2.75rem,min(5.4vw,6.7svh),5.75rem)] lg:mr-[4vw]">
+      <div className="shell relative flex flex-1 flex-col pb-5 pt-[5rem] md:pb-6 lg:pb-10 lg:pt-32">
+        <h1 className="mr-1 flex flex-row-reverse justify-start gap-[0.4em] self-end text-[clamp(1.75rem,min(8.4vw,4.4svh),3.25rem)] leading-[1.25] tracking-[0.12em] md:mr-0 md:self-start md:text-[clamp(2.75rem,min(5.4vw,6.7svh),5.75rem)]">
           {hero.headline.map((line) => (
-            <span key={line} className="hero-line block [writing-mode:vertical-rl]">
+            <span key={line} className="hero-line block whitespace-nowrap [writing-mode:vertical-rl]">
               {line}
             </span>
           ))}
@@ -48,7 +48,7 @@ export function Hero() {
               </a>
             </div>
           </div>
-          <div className="text-[0.75rem] leading-relaxed tracking-[0.05em] text-cream/90 md:text-right">
+          <div className="text-[0.8125rem] leading-relaxed tracking-[0.05em] text-cream lg:text-right">
             <p>{store.award}</p>
             <p className="mt-1">写真は仮画像です</p>
           </div>

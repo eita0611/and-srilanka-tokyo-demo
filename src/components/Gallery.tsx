@@ -39,7 +39,6 @@ export function Gallery() {
         </div>
 
         <ul
-          data-reveal
           className="mt-10 grid auto-rows-[44vw] grid-flow-dense grid-cols-2 gap-2 sm:auto-rows-[30vw] lg:mt-16 lg:auto-rows-[min(7.4vw,6.75rem)] lg:grid-cols-12 lg:gap-3"
         >
           {gallery.map((item) => {
@@ -47,21 +46,21 @@ export function Gallery() {
               return (
                 <li
                   key={item.text}
-                  className={`flex flex-col justify-between bg-ink p-5 text-cream ${item.layout}`}
+                  data-reveal
+                  className={`flex flex-col justify-between bg-ink p-4 text-cream lg:p-5 ${item.layout}`}
                 >
                   <span className="amp text-[2.5rem] leading-none text-spice-light">&amp;</span>
-                  <span className="text-[0.875rem] leading-relaxed">{item.text}</span>
+                  <span className="text-[0.8125rem] leading-relaxed lg:text-[0.875rem]">{item.text}</span>
                 </li>
               );
             }
             const index = photoItems.indexOf(item);
             return (
-              <li key={item.photo.alt} className={item.layout}>
+              <li key={item.photo.alt} data-reveal className={item.layout}>
                 <button
                   type="button"
                   onClick={() => setCurrent(index)}
                   aria-haspopup="dialog"
-                  aria-label={`${item.photo.alt}を拡大する`}
                   className="zoom-trigger group relative block size-full cursor-zoom-in"
                 >
                   <span className="zoom-frame block size-full">
@@ -75,6 +74,7 @@ export function Gallery() {
                   <span className="absolute right-2.5 top-2.5 bg-cream px-2 text-[0.6875rem] leading-[1.7] tracking-[0.06em] text-ink opacity-0 transition-opacity duration-500 ease-soft group-hover:opacity-100 group-focus-visible:opacity-100">
                     {item.category}
                   </span>
+                  <span className="sr-only">：{item.photo.alt}を拡大する</span>
                 </button>
               </li>
             );

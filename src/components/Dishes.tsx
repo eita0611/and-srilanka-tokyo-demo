@@ -9,7 +9,7 @@ import { CloseButton, Modal } from "./Modal";
 import { Photo } from "./Photo";
 
 const layouts = [
-  { frame: "lg:col-span-7", photo: "aspect-[4/5] lg:aspect-[6/7]", sizes: "(min-width: 1024px) 56vw, 100vw" },
+  { frame: "lg:col-span-7", photo: "aspect-[1/1] lg:aspect-[12/11]", sizes: "(min-width: 1024px) 56vw, 100vw" },
   { frame: "lg:col-span-5 lg:mt-40", photo: "aspect-[4/3] lg:aspect-[5/4]", sizes: "(min-width: 1024px) 40vw, 100vw" },
   { frame: "lg:col-span-8 lg:col-start-3 lg:mt-24", photo: "aspect-[4/5] lg:aspect-[16/9]", sizes: "(min-width: 1024px) 64vw, 100vw" },
 ];
@@ -82,6 +82,7 @@ export function Dishes() {
       <Modal open={dish !== null} onClose={() => setCurrent(null)} label={dish ? `${dish.name}の詳細` : "料理の詳細"}>
         {dish ? (
           <DishDetail
+            key={dish.id}
             dish={dish}
             onClose={() => setCurrent(null)}
             onNext={() => setCurrent(((current ?? 0) + 1) % dishes.length)}
@@ -109,12 +110,12 @@ function DishDetail({ dish, onClose, onNext }: { dish: Dish; onClose: () => void
         <dl className="mt-7 border-t border-ink/20 text-[0.9375rem]">
           {dish.details.map((detail) => (
             <div key={detail.label} className="grid grid-cols-[6.5em_1fr] gap-3 border-b border-ink/20 py-3 leading-relaxed">
-              <dt className="text-olive">{detail.label}</dt>
+              <dt className="text-olive-deep">{detail.label}</dt>
               <dd>{detail.value}</dd>
             </div>
           ))}
           <div className="grid grid-cols-[6.5em_1fr] gap-3 border-b border-ink/20 py-3 leading-relaxed">
-            <dt className="text-olive">価格</dt>
+            <dt className="text-olive-deep">価格</dt>
             <dd>{dish.price ?? "店舗に確認後、掲載します"}</dd>
           </div>
         </dl>

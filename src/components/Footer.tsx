@@ -31,7 +31,7 @@ export function Footer() {
         </div>
 
         {site.isDemo ? (
-          <div className="mt-12 border-t border-cream/20 pt-6 text-[0.75rem] leading-relaxed text-cream/75 lg:mt-16">
+          <div className="mt-12 border-t border-cream/20 pt-6 text-[0.8125rem] leading-relaxed text-cream/80 lg:mt-16">
             <p>{site.demoNotice}</p>
             <details className="mt-3">
               <summary className="cursor-pointer">仮画像のクレジット（Unsplash License）</summary>

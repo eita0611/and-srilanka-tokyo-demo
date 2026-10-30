@@ -14,9 +14,9 @@ export const hero = {
 };
 
 export const about = {
-  heading: "スリランカのスパイスと、日本の食文化が出会う場所。",
+  heading: ["スリランカのスパイスと、", "日本の食文化が出会う場所。"],
   body: [
-    "&スリランカTOKYOは、神保町にあるカレーの店です。発酵とスパイスを取り入れ、ココナッツの風味を活かしたカレーをお出ししています。",
+    "&スリランカTOKYOは、福岡発のカレー店です。発酵とスパイスを取り入れ、ココナッツの風味を活かしたカレーを、神保町でお出ししています。",
     "スリランカの香りと、日本の食文化。その二つが、一皿の中で出会います。",
   ],
   points: [
@@ -53,8 +53,8 @@ export const story = {
     },
     {
       left: "ココナッツ",
-      right: "鉄板",
-      body: "ココナッツをベースにしたカレーは、まろやかでありながら、スパイスのキレを失いません。熱々の鉄板で運ばれてくる時間も、味わいの一部です。",
+      right: "コク",
+      body: "ココナッツをベースにしたカレーは、まろやかでありながら、スパイスのキレを失いません。ひと口ごとに、豊かな風味が広がります。",
       photo: photos.storyCoconut,
     },
     {
@@ -70,20 +70,19 @@ export type GalleryItem =
   | { kind: "photo"; category: "料理" | "店内"; photo: Photo; layout: string }
   | { kind: "pending"; category: "外観"; text: string; layout: string };
 
-/** layout はデスクトップで12列グリッド上に置く位置です */
+/** layout はデスクトップで12列グリッド上に置く位置です。スマホは2列で、隙間が出ない順に並べています */
 export const gallery: GalleryItem[] = [
-  { kind: "photo", category: "料理", photo: photos.galleryBowl, layout: "row-span-2 lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-6" },
-  { kind: "photo", category: "料理", photo: photos.galleryPan, layout: "lg:col-start-5 lg:col-end-10 lg:row-start-1 lg:row-end-4" },
-  { kind: "photo", category: "店内", photo: photos.galleryInterior, layout: "row-span-2 lg:col-start-10 lg:col-end-13 lg:row-start-1 lg:row-end-5" },
+  { kind: "photo", category: "料理", photo: photos.galleryPan, layout: "row-span-2 lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-6" },
+  { kind: "photo", category: "料理", photo: photos.galleryRed, layout: "lg:col-start-5 lg:col-end-10 lg:row-start-1 lg:row-end-4" },
+  { kind: "photo", category: "店内", photo: photos.galleryCounter, layout: "row-span-2 lg:col-start-10 lg:col-end-13 lg:row-start-1 lg:row-end-5" },
   { kind: "photo", category: "料理", photo: photos.galleryRice, layout: "lg:col-start-5 lg:col-end-8 lg:row-start-4 lg:row-end-7" },
   { kind: "photo", category: "料理", photo: photos.galleryPlate, layout: "lg:col-start-8 lg:col-end-10 lg:row-start-4 lg:row-end-7" },
   {
     kind: "pending",
     category: "外観",
     text: "外観の写真は店舗での撮影後に掲載します。",
-    layout: "col-span-2 lg:col-span-1 lg:col-start-10 lg:col-end-13 lg:row-start-5 lg:row-end-7",
+    layout: "lg:col-start-10 lg:col-end-13 lg:row-start-5 lg:row-end-7",
   },
-  { kind: "photo", category: "料理", photo: photos.galleryRed, layout: "col-span-2 lg:col-span-1 lg:col-start-1 lg:col-end-5 lg:row-start-6 lg:row-end-10" },
-  { kind: "photo", category: "店内", photo: photos.galleryLamp, layout: "lg:col-start-5 lg:col-end-9 lg:row-start-7 lg:row-end-10" },
-  { kind: "photo", category: "店内", photo: photos.galleryCounter, layout: "lg:col-start-9 lg:col-end-13 lg:row-start-7 lg:row-end-10" },
+  { kind: "photo", category: "料理", photo: photos.galleryCream, layout: "col-span-2 lg:col-span-1 lg:col-start-1 lg:col-end-5 lg:row-start-6 lg:row-end-10" },
+  { kind: "photo", category: "店内", photo: photos.galleryLamp, layout: "col-span-2 lg:col-span-1 lg:col-start-5 lg:col-end-13 lg:row-start-7 lg:row-end-10" },
 ];

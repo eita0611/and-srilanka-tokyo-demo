@@ -35,18 +35,18 @@ export function Story() {
 
                 <div className="mt-7 grid gap-x-16 gap-y-7 lg:mt-12 lg:grid-cols-12 lg:items-end">
                   <div
-                    data-reveal
-                    className={`lg:col-span-6 ${flipped ? "lg:col-start-7 lg:row-start-1" : ""}`}
+                    data-reveal="photo"
+                    className={`lg:col-span-7 ${flipped ? "lg:col-start-6 lg:row-start-1" : ""}`}
                   >
                     <Photo
                       photo={pair.photo}
-                      sizes="(min-width: 1024px) 46vw, 100vw"
-                      className="drift aspect-[4/3] lg:aspect-[3/2]"
+                      sizes="(min-width: 1024px) 54vw, 100vw"
+                      className="drift aspect-[4/3] lg:aspect-[8/5]"
                     />
                   </div>
                   <div
                     data-reveal
-                    className={`lg:col-span-4 ${flipped ? "lg:col-start-2 lg:row-start-1" : "lg:col-start-8"}`}
+                    className={`lg:col-span-4 ${flipped ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-9"}`}
                   >
                     <p className="max-w-[32em] text-cream/85">{pair.body}</p>
                     {pair.note ? (

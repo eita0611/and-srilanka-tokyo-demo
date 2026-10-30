@@ -11,6 +11,8 @@ export const store = {
   name,
   formerName: "RスリランカTOKYO",
   address,
+  /** 構造化データ用に住所を分けたもの */
+  addressParts: { region: "東京都", locality: "千代田区", street: "神田神保町1-54-4 JHVビル1F" },
   coordinates,
 
   access: [

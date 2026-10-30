@@ -4,7 +4,7 @@
 
 ## 起動方法
 
-Node.js 20.9 以上が必要です。このMacでは `~/.local/node` に Node.js を入れているため、ターミナルごとに最初の1行を実行します。
+Node.js 24 が必要です。このMacでは `~/.local/node` に Node.js を入れているため、ターミナルごとに最初の1行を実行します。
 
 ```bash
 export PATH="$HOME/.local/node/bin:$PATH"

@@ -16,3 +16,6 @@ next-env.d.ts
 # ログとOSの一時ファイル
 *.log
 .DS_Store
+
+# iCloud が作る複製（Desktop 同期の環境で発生）
+* 2.*

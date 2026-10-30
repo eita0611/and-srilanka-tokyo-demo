@@ -19,7 +19,7 @@ export const dishes: Dish[] = [
     name: "豚肩ロースステーキカレー",
     summary: "ステーキがそのまま一皿に。迷ったら、まずはこのカレーから。",
     description:
-      "塩胡椒で味つけした豚肩ロースのステーキを、ココナッツベースのカレーと合わせました。やわらかな肉の旨みに、スパイスの香りが重なります。",
+      "塩胡椒で味つけした豚肩ロースのステーキを、ココナッツベースのカレーと合わせました。やわらかな肉の旨みに、スパイスの香りが重なります。熱々の鉄板でお出しします。",
     details: [
       { label: "のせるもの", value: "豚肩ロースのステーキ、パプリカ、カイワレ" },
       { label: "カレー", value: "ココナッツベース" },
@@ -27,7 +27,6 @@ export const dishes: Dish[] = [
     ],
     price: null,
     photo: photos.dishPork,
-    photoPosition: "50% 82%",
   },
   {
     id: "dry-and-curry",

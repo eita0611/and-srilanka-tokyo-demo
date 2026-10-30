@@ -20,7 +20,9 @@ const restaurantJsonLd = {
   address: {
     "@type": "PostalAddress",
     addressCountry: "JP",
-    streetAddress: store.address,
+    addressRegion: store.addressParts.region,
+    addressLocality: store.addressParts.locality,
+    streetAddress: store.addressParts.street,
   },
   geo: {
     "@type": "GeoCoordinates",
@@ -29,6 +31,7 @@ const restaurantJsonLd = {
   },
   openingHours: `Mo-Su ${store.hours.open}-${store.hours.close}`,
   url: site.url,
+  acceptsReservations: store.links.reservation.url,
   sameAs: [store.links.instagram.url],
 };
 

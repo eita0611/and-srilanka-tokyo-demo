@@ -7,9 +7,11 @@
   --color-ink-soft: #5c4f44;
   --color-spice: #c76a28;
   /* 小さな文字とボタンの背景用。#C76A28 と同じ色相で AA のコントラストを満たす */
-  --color-spice-deep: #a9561d;
+  --color-spice-deep: #9f501b;
   --color-spice-light: #e8a36b;
   --color-olive: #65704e;
+  /* クリーム地の小さな文字用。#65704E と同じ色相で AA のコントラストを満たす */
+  --color-olive-deep: #525c3e;
 
   --font-mincho: var(--font-shippori), "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-gothic: var(--font-zen-kaku), "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
@@ -308,6 +310,28 @@
   transform: none;
 }
 
+/* 写真は、下から少しだけ開きながら現れる */
+.js [data-reveal="photo"] {
+  transform: none;
+  clip-path: inset(0 0 16% 0);
+  transition:
+    opacity 1.1s var(--ease-soft),
+    clip-path 1.5s var(--ease-soft);
+}
+
+.js [data-reveal="photo"][data-shown] {
+  clip-path: inset(0);
+}
+
+/* ギャラリーは列ごとに少し遅らせて、波のように現れる */
+#gallery li[data-reveal]:nth-child(3n + 2) {
+  transition-delay: 0.12s;
+}
+
+#gallery li[data-reveal]:nth-child(3n) {
+  transition-delay: 0.24s;
+}
+
 /* ===== スクロールに合わせて写真がわずかに動く（対応ブラウザのみ） ===== */
 @supports (animation-timeline: view()) {
   .drift img {
@@ -354,5 +378,6 @@
   .js [data-reveal] {
     opacity: 1;
     transform: none;
+    clip-path: none;
   }
 }

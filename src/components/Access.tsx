@@ -3,7 +3,7 @@ import { store } from "@/data/store";
 function Row({ term, children }: { term: string; children: React.ReactNode }) {
   return (
     <div className="grid gap-1 border-b border-ink/20 py-5 sm:grid-cols-[7em_1fr] sm:gap-4">
-      <dt className="text-[0.875rem] text-olive">{term}</dt>
+      <dt className="text-[0.875rem] text-olive-deep">{term}</dt>
       <dd className="leading-[1.8]">{children}</dd>
     </div>
   );
