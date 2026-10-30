@@ -1,0 +1,18 @@
+# 依存パッケージとビルド結果
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+
+# 環境変数（APIキーなどをGitHubに上げない）
+.env
+.env.*
+!.env.example
+
+# Vercel のローカル設定
+.vercel
+
+# ログとOSの一時ファイル
+*.log
+.DS_Store
